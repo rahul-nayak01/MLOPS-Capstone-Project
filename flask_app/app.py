@@ -71,7 +71,7 @@ def normalize_text(text):
 # -------------------------------------------------------------------------------------
 # mlflow.set_tracking_uri('https://dagshub.com/rahul-nayak01/MLOPS-Capstone-Project.mlflow')
 # dagshub.init(repo_owner='rahul-nayak01', repo_name='MLOPS-Capstone-Project', mlflow=True)
-# -------------------------------------------------------------------------------------
+#-------------------------------------------------------------------------------------
 
 # Below code block is for production use
 # -------------------------------------------------------------------------------------
@@ -115,7 +115,7 @@ PREDICTION_COUNT = Counter(
 model_name = "my_model"
 def get_latest_model_version(model_name):
     client = mlflow.MlflowClient()
-    latest_version = client.get_latest_versions(model_name, stages=["Staging"])
+    latest_version = client.get_latest_versions(model_name, stages=["Production"])
     if not latest_version:
         latest_version = client.get_latest_versions(model_name, stages=["None"])
     return latest_version[0].version if latest_version else None
