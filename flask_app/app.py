@@ -3,6 +3,7 @@ import mlflow
 import pickle
 import os
 import pandas as pd
+import numpy as np
 from prometheus_client import Counter, Histogram, generate_latest, CollectorRegistry, CONTENT_TYPE_LATEST
 import time
 from nltk.stem import WordNetLemmatizer
